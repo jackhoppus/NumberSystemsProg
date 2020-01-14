@@ -5,6 +5,13 @@ function ConversionPart1() {
     var UnsignedIntBaseTo = parseInt(document.getElementById("1_UnsignedIntBaseToConvertTo").value);
 
 
+    if (UnsignedIntBaseFrom != 10){
+      //convert to 10
+      var value = 0;
+      var workingInt = UnsignedInt;
+
+    }
+
 
   var outputValue = "11111111";
 
