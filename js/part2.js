@@ -30,17 +30,29 @@ function ConversionPart2() {
 
 
     //adding one
+    // var newCounter = outputValueTwosComplement.length - 1;
+    // var workingValue = outputValueTwosComplement;
+    // while (workingValue.charAt(newCounter)!= 0 && newCounter > 0){
+    //   workingValue = Number(workingValue) - 1;
+    //   workingValue = workingValue.toString();
+    //   workingValue = workingValue.substring (0, newCounter);
+    //   newCounter = newCounter -1;
+    // }
+    // if (outputValueTwosComplement.charAt(newCounter) == 0){
+    //   outputValueTwosComplement = outputValueTwosComplement.replaceAt(newCounter, "1");
+    // }
+    var firstZero = outputValueTwosComplement.lastIndexOf('0');
     var newCounter = outputValueTwosComplement.length - 1;
-    var workingValue = outputValueTwosComplement;
-    while (workingValue.charAt(newCounter)!= 0 && newCounter > 0){
-      workingValue = Number(workingValue) - 1;
-      workingValue = workingValue.toString();
-      workingValue = workingValue.substring (0, newCounter);
-      newCounter = newCounter -1;
+    while (newCounter >= firstZero){
+       if (outputValueTwosComplement.charAt(newCounter) == '0'){
+         outputValueTwosComplement.replaceAt (newCounter, '1');
+       }
+       else{
+         outputValueTwosComplement = outputValueTwosComplement.substring (0, outputValueTwosComplement.length - 1) + '0';
+       }
+       newCounter--;
     }
-    if (outputValueTwosComplement.charAt(newCounter) == 0){
-      outputValueTwosComplement = outputValueTwosComplement.replaceAt(newCounter, "1");
-    }
+
 
 
 
