@@ -23,10 +23,10 @@ function ConversionPart1() {
       //      Value := Value DIV N;
       // UNTIL (Value = 0);
 
-      var newFinalValue = 0;
+      var newFinalValue = '';
       var newWorkingValue = outputValue;
       while (newWorkingValue != 0){
-        var nextDigit = newWorkingValue % UnsignedIntBaseTo;
+        var nextDigit = Math.round(newWorkingValue % UnsignedIntBaseTo);
         newWorkingValue = newWorkingValue / UnsignedIntBaseTo;
         newWorkingValue = newWorkingValue - nextDigit/UnsignedIntBaseTo;
         if (newWorkingValue < 1){
@@ -56,6 +56,10 @@ function ConversionPart1() {
 
 
   // Show the output on the screen
-  FormatAndShowOutput([UnsignedInt, UnsignedIntBaseFrom, UnsignedIntBaseTo, newFinalValue], 1);
+  FormatAndShowOutput([UnsignedInt, UnsignedIntBaseFrom, UnsignedIntBaseTo, reverseString(newFinalValue)], 1);
 
+}
+
+function reverseString (str){
+  return str.split("").reverse().join("");
 }
